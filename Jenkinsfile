@@ -21,6 +21,7 @@ pipeline {
     }
 
     stages {
+
         stage('Example') {
             steps {
                 echo "Hello ${params.PERSON}"
@@ -30,9 +31,7 @@ pipeline {
                 echo "Password: ${params.PASSWORD}"
             }
         }
-    }
 
-    stages {
         stage ('build') {
             steps {
                 sh 'echo this is build'
