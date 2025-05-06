@@ -32,4 +32,16 @@ pipeline {
             }
         }
     }
+
+    post {
+        always {
+            sh 'echo this runs always'
+        }
+        failure {
+            sh 'echo this runs during build failue'
+        }
+        success {
+            sh 'echo this runs during duild success'
+        }
+    }
 }
