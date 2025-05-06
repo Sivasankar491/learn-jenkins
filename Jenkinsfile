@@ -28,7 +28,7 @@ pipeline {
 
         stage ('deploy in k8') {
             steps {
-                ch 'echo deploy in k8'
+                sh 'echo deploy in k8'
             }
         }
     }
