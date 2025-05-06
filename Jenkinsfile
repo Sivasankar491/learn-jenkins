@@ -9,6 +9,7 @@ pipeline {
         disableConcurrentBuilds()
         retry(2)
         timeout(time: 10, unit: 'MINUTES')
+        timestamps()
     }
 
     stages {
@@ -39,7 +40,7 @@ pipeline {
         stage ('deploy in k8') {
             steps {
                 sh 'echo deploy in k8'
-                error "manual failed"
+                // error "manual failed"
             }
         }
     }
