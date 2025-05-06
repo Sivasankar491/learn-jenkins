@@ -1,6 +1,16 @@
 pipeline {
     agent any
 
+    environment {
+        DEBUG = 'true'
+    }
+
+    options {
+        disableConcurrentBuilds()
+        retry(2)
+        timeout(time: 10, unit: 'MINUTES')
+    }
+
     stages {
         stage ('build') {
             steps {
@@ -29,6 +39,7 @@ pipeline {
         stage ('deploy in k8') {
             steps {
                 sh 'echo deploy in k8'
+                error "manual failed"
             }
         }
     }
